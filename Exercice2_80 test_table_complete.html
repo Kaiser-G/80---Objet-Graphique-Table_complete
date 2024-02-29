@@ -20,7 +20,8 @@
 
     <div id="zone"></div>
 
-
+    <!--Div pour la fenetre modal-->
+    <div></div>
 
 
 
@@ -83,13 +84,13 @@
         function vueRegion(e) {
             // alert("Click sur vue region");
             let valeurs = e.target.value.split(",");
-            for (let i = 0; i < valeurs.length; i++) {
-                alert("Vue " + valeurs[i]);
-            }
+            // for (let i = 0; i < valeurs.length; i++) {
+            //     alert("Vue " + valeurs[i]);
+            // }
             //a tester
-            // valeurs.forEach((value) => {
-            //     alert("Vue " + valeurs);
-            // });
+            valeurs.forEach((value) => {
+                alert("Vue " + value);
+            });
         }
 
         //fonction_suppr
