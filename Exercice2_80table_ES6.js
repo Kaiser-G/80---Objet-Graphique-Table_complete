@@ -10,6 +10,16 @@ class Table {
   icone_vue = "";
   icone_suppr = "";
   separateur = "*";
+  //exo2
+  BS_class_vue = "";
+  BS_class_modif = "";
+  BS_class_sppr = "";
+  BS_toggle_modal = "";
+  BS_target_vue = "";
+  BS_target_modif = "";
+  BS_target_suppr = "";
+  id_tbody = "";
+  append = "";
 
   // Les méthodes
   fonction_modif = ""; // doit contenir la fonction qui sera appelée lors du
@@ -77,7 +87,7 @@ class Table {
           // alert(values);
           if (typeof this.fonction_vue == "function") {
             let btn = document.createElement("button");
-            btn.className = this.class_vue + this.icone_vue;
+            btn.className = this.class_vue + this.icone_vue + this.BS_class_vue;
             //btn.className = "vueRegion btn btn-danger btn-sm fas fa-eye fa-sm";
             btn.value = values;
 
@@ -94,7 +104,7 @@ class Table {
           //création bouton modif
           if (typeof this.fonction_modif == "function") {
             let btn2 = document.createElement("button");
-            btn2.className = this.class_modif + this.icone_modif;
+            btn2.className = this.class_modif + " " + this.icone_modif;
             // btn2.className = "btn btn-success btn-sm fas fa-pencil fa-sm";
             btn2.value = values;
             btn2.addEventListener(
