@@ -50,7 +50,7 @@
     </div>
 
     <!--Fenetre modal VUE-->
-    <div class="modal fade" id="frmVue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="ModalVue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -126,40 +126,19 @@
             let tab = new Table();
             tab.id_zone = "zone";
             tab.class_table = "table table-dark table_hover";
-
-
-            //pour les fenetres Modal Bootstrap (objet JSON)
-            tab.BS_toggle_modal = {
-                attribut: "data-bs-toggle",
-                valeur: "modal"
-            };
-            tab.BS_target_vue = {
-                attribut: "data-bs-target",
-                valeur: "#frmVue"
-            };
-            tab.BS_target_modif = {
-                attribut: "data-bs-target",
-                valeur: "#frmModif"
-            }
-            tab.BS_target_suppr = {
-                attribut: "data-bs-target",
-                valeur: "#frmSuppr"
-            };
-
-
             //data = les données
             tab.data = [[1, "Centre Val de Loire"],
             [2, "Bretagne"], [3, "Languedoc"], [4, "Corse"], [5, "Alsace"], [6, "Auvergne"], [8, "Rhone Alpes"], [9, "Normandie"], [11, "POLOGNE"]];
 
             tab.header = ["Code", "Nom"];
-            tab.class_modif = "";//class sans Bootstrap
-            tab.class_suppr = "";
-            tab.class_vue = "";
+            tab.class_modif = "mod_region";
+            tab.class_suppr = "suppr_region";
+            tab.class_vue = "VueRegion";
 
             //BS
-            tab.icone_vue = "fas fa-eye fa-sm";//class pour les icones
-            tab.icone_modif = "fas fa-pencil fa-sm";
-            tab.icone_suppr = "btn-sm fas fa-trash fa-sm";
+            tab.icone_vue = "btn btn-danger btn-sm fas fa-eye fa-sm";
+            tab.icone_modif = "btn btn-success btn-sm fas fa-pencil fa-sm";
+            tab.icone_suppr = "btn btn-warning btn-sm fas fa-trash fa-sm";
 
             //Les méthodes
             tab.fonction_modif = modifRegion;
@@ -167,13 +146,13 @@
             tab.fonction_vue = vueRegion;
 
             //exo 2
-            tab.BS_class_vue = "btn btn-danger";//Class Bootstrap
-            tab.BS_class_modif = "btn btn-success";
-            tab.BS_class_sppr = "btn btn-warning";
-            // tab.BS_toggle_modal = "";
-            // tab.BS_target_vue = "";
-            // tab.BS_target_modif = "";
-            // tab.BS_target_suppr = "";
+            tab.BS_class_vue = "data-bs-toggle='modal' data-bs-target='#ModalVue'";
+            tab.BS_class_modif = "";
+            tab.BS_class_sppr = "";
+            tab.BS_toggle_modal = "";
+            tab.BS_target_vue = "";
+            tab.BS_target_modif = "";
+            tab.BS_target_suppr = "";
             tab.id_tbody = "idTable";
             tab.append = true;
 

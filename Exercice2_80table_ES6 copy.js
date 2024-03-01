@@ -123,7 +123,7 @@ class Table {
           if (typeof this.fonction_suppr == "function") {
             let btn3 = document.createElement("button");
             btn3.className =
-              this.class_suppr + this.icone_suppr + this.BS_class_sppr;
+              this.class_suppr + this.icone_suppr + this.class_suppr;
             // btn3.className ="btn btn-info btn-sm fas fa-trash fa-sm";
             btn3.value = values;
             btn3.addEventListener(
