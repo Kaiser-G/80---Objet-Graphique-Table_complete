@@ -19,7 +19,7 @@ class Table {
   BS_target_modif = "";
   BS_target_suppr = "";
   id_tbody = "";
-  append = "";
+  append = false;
 
   // Les méthodes
   fonction_modif = ""; // doit contenir la fonction qui sera appelée lors du
