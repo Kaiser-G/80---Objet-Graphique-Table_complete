@@ -91,6 +91,18 @@ class Table {
             btn.className = this.class_vue + this.icone_vue + this.BS_class_vue;
             //btn.className = "vueRegion btn btn-danger btn-sm fas fa-eye fa-sm";
             btn.value = values;
+            //création fenetre MODAL sur bouton vue
+            // JSON.parse(this.BS_toggle_modal); //Plante si pas JSON
+
+            btn.setAttribute(
+              this.BS_toggle_modal.attribut,
+              this.BS_toggle_modal.valeur
+            );
+
+            btn.setAttribute(
+              this.BS_target_vue.attribut,
+              this.BS_target_vue.valeur
+            );
 
             btn.addEventListener(
               "click",
@@ -109,6 +121,20 @@ class Table {
               this.class_modif + " " + this.icone_modif + this.BS_class_modif;
             // btn2.className = "btn btn-success btn-sm fas fa-pencil fa-sm";
             btn2.value = values;
+
+            //création fenetre MODAL sur bouton vue
+            // JSON.parse(this.BS_toggle_modal); //Plante si pas JSON
+
+            btn2.setAttribute(
+              this.BS_toggle_modal.attribut,
+              this.BS_toggle_modal.valeur
+            );
+
+            btn2.setAttribute(
+              this.BS_target_modif.attribut,
+              this.BS_target_modif.valeur
+            );
+
             btn2.addEventListener(
               "click",
               (e) => {
@@ -126,6 +152,20 @@ class Table {
               this.class_suppr + this.icone_suppr + this.BS_class_sppr;
             // btn3.className ="btn btn-info btn-sm fas fa-trash fa-sm";
             btn3.value = values;
+
+            //création fenetre MODAL sur bouton vue
+            // JSON.parse(this.BS_toggle_modal); //Plante si pas JSON
+
+            btn3.setAttribute(
+              this.BS_toggle_modal.attribut,
+              this.BS_toggle_modal.valeur
+            );
+
+            btn3.setAttribute(
+              this.BS_target_suppr.attribut,
+              this.BS_target_suppr.valeur
+            );
+
             btn3.addEventListener(
               "click",
               (e) => {

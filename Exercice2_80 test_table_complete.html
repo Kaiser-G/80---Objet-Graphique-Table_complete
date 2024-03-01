@@ -25,44 +25,88 @@
 
     <!--Pour la fenetre modal-->
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--Fenetre modal VUE-->
     <div class="modal fade" id="frmVue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Consultation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    Code : <input type="text" id="txtCodeVue" name="txtCodeVue" readonly />
+                    <br>
+                    Libellé : <input type="text" id="txtLibelleVue" name="txtLibelleVue" readonly />
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Fenetre modal MODIF-->
+    <!-- <div class="modal fade" id="frmModif" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Code : <input type="text" id="txtCodeModif" name="txtCodeVue" readonly />
+                    <br>
+                    Libellé : <input type="text" id="txtLibelleModif" name="txtLibelleVue" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--MODIF V2 TEST-->
+
+    <div class="modal fade" id="frmModif" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtCodeModif" placeholder="Enter email" name="email">
+                    <label for="email">Code</label>
+                </div>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="txtLibelleModif" placeholder="Enter password"
+                        name="pswd">
+                    <label for="pwd">Libellé</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fenetre modal SUPPR-->
+    <div class="modal fade" id="frmSuppr" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    SUPPRIMER LA LIGNE ? <input type="text" id="txtCodeSuppr" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Oui</button>
+                    <button type="button" class="btn btn-danger">Non</button>
                 </div>
             </div>
         </div>
@@ -94,9 +138,12 @@
         function modifRegion(e) {
             // alert("Click sur modif region");
             let valeurs = e.target.value.split(",");
-            for (let i = 0; i < valeurs.length; i++) {
-                alert("Modif " + valeurs[i]);
-            }
+            document.getElementById("txtCodeModif").value = valeurs[0];
+            document.getElementById("txtLibelleModif").value = valeurs[1];
+            // for (let i = 0; i < valeurs.length; i++) {
+            //     alert("Modif " + valeurs[i]);
+            // }
+
         }
 
         //function_vue
@@ -107,18 +154,22 @@
             //     alert("Vue " + valeurs[i]);
             // }
             //a tester
-            valeurs.forEach((value) => {
-                alert("Vue " + value);
-            });
+            // valeurs.forEach((value) => {
+            //     alert("Vue " + value);
+            // });
+            document.getElementById("txtCodeVue").value = valeurs[0];
+            document.getElementById("txtLibelleVue").value = valeurs[1];
         }
 
         //fonction_suppr
         function supprRegion(e) {
             // alert("Click sur supp region");
             let valeurs = e.target.value.split(",");
-            for (let i = 0; i < valeurs.length; i++) {
-                alert("Supp " + valeurs[i]);
-            }
+            document.getElementById("txtCodeSuppr").value = valeurs[0];
+            document.getElementById("txtLibelleSuppr").value = valeurs[1];
+            // for (let i = 0; i < valeurs.length; i++) {
+            //     alert("Supp " + valeurs[i]);
+            // }
         }
 
         window.addEventListener("load", (event) => {
@@ -128,7 +179,7 @@
             tab.class_table = "table table-dark table_hover";
 
 
-            //pour les fenetres Modal Bootstrap (objet JSON)
+            //pour les fenetres Modal Bootstrap (objet JSON) rajoute data-bs-toggle modal etc...
             tab.BS_toggle_modal = {
                 attribut: "data-bs-toggle",
                 valeur: "modal"
